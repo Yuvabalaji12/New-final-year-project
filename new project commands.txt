@@ -1,0 +1,29 @@
+=== FIRST TIME SETUP (run all steps) ===
+
+1. npx ganache-cli -p 8545 --db ./my_chain_data
+
+2. cd CertificateVerification
+   npx truffle migrate --reset
+
+3. cd ..
+   python update_configs.py
+
+4. cd AnalyticsService
+   .\apache-maven-3.9.5\bin\mvn.cmd spring-boot:run
+
+5. cd ..\CertificateVerification
+   python Main.py
+
+
+=== SUBSEQUENT RUNS (skip deploy, certificates are preserved) ===
+
+1. npx ganache-cli -p 8545 --db ./my_chain_data
+
+2. cd AnalyticsService
+   .\apache-maven-3.9.5\bin\mvn.cmd spring-boot:run
+
+3. cd ..\CertificateVerification
+   python Main.py
+
+NOTE: Only re-run "truffle migrate --reset" and "update_configs.py" if you changed the smart contract code.
+      This will deploy a new contract and old certificates will NOT carry over.

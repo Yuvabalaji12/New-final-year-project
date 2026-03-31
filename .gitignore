@@ -1,0 +1,50 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Java & Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.idea/
+
+# Node.js / Truffle
+node_modules/
+build/
+coverage/
+
+# Secrets & API Keys (AWS, Pinata)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# AWS credentials 
+~/.aws/credentials
+# Explicit ignores for files containing keys
+aws_keys.json
+pinata_keys.json
+secrets.json
+credentials.json
+keys.json
+config.json
+*aws_keys*
+*pinata_keys*
+*.pem
+*.ppk
