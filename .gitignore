@@ -29,6 +29,20 @@ node_modules/
 build/
 coverage/
 
+# Local blockchain data
+my_chain_data/
+CertificateVerification/my_chain_data/
+AnalyticsService/my_chain_data/
+**/my_chain_data/
+
+# Bundled tooling
+AnalyticsService/apache-maven-3.9.5/
+AnalyticsService/apache-maven-*/
+
+# Large ML artifacts
+CertificateVerification/signature_verification/*.keras
+CertificateVerification/signature_verification/model_weights/
+
 # Secrets & API Keys (AWS, Pinata)
 .env
 .env.local

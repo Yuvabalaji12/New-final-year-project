@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Authenticate Certificate</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7f6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .navbar { background-color: #0d6efd; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .navbar-brand, .nav-link { color: #fff !important; }
+        .card { border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    </style>
+    <script LANGUAGE="Javascript">
+    function validate(){
+        var a4=document.forms["f1"]["t1"].value;	
+        if(a4 == null || a4==""){ alert("Please upload Barcode file"); document.f1.t1.focus(); return false; }
+        return true;
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark mb-5">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Blockchain Verification</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="AuthenticateScan">Authenticate Certificate</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning" href="index">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                {% if msg %}
+                <div class="alert alert-info text-center fw-bold">{{ msg | safe }}</div>
+                {% endif %}
+                <div class="card p-4 text-center">
+                    <h3 class="mb-4 text-primary">Authenticate Certificate Screen</h3>
+                    <form name="f1" method="post" action="/AuthenticateScanAction" enctype="multipart/form-data" onsubmit="return validate(this);">
+                        <div class="mb-4 text-start">
+                            <label class="form-label fw-bold">Upload Barcode / Certificate Image</label>
+                            <input type="file" name="t1" class="form-control form-control-lg">
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Authenticate Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

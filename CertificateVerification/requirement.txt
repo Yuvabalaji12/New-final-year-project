@@ -1,0 +1,11 @@
+Flask
+web3
+PyQRCode
+pypng
+boto3
+requests
+python-dotenv
+tensorflow
+numpy
+Pillow
+scikit-learn
